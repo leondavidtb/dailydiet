@@ -14,6 +14,7 @@ import {
 import logoImg from "../../assets/logo.png";
 import ellipseImg from "../../assets/ellipse.png";
 import { useTheme } from "styled-components/native";
+import { PercentCard } from "../../components/PercentCard";
 
 export function Home() {
   const { COLORS } = useTheme();
@@ -32,7 +33,9 @@ export function Home() {
             <Logo source={logoImg} />
             <Ellipse source={ellipseImg} />
           </Header>
-          <PercentSection></PercentSection>
+          <PercentSection>
+            <PercentCard loading={false} percent={30} />
+          </PercentSection>
 
           <MealsSection>
             <MealsSectionHeader>
