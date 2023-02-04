@@ -15,6 +15,8 @@ import logoImg from "../../assets/logo.png";
 import ellipseImg from "../../assets/ellipse.png";
 import { useTheme } from "styled-components/native";
 import { PercentCard } from "../../components/PercentCard";
+import { Button } from "../../components/Button";
+import { Plus } from "phosphor-react-native";
 
 export function Home() {
   const { COLORS } = useTheme();
@@ -40,6 +42,11 @@ export function Home() {
           <MealsSection>
             <MealsSectionHeader>
               <MealsTitle>Refeições</MealsTitle>
+              <Button
+                title="Nova refeição"
+                type="PRIMARY"
+                icon={<Plus size={18} color={COLORS.WHITE} />}
+              />
             </MealsSectionHeader>
 
             <MealsSectionContent></MealsSectionContent>
