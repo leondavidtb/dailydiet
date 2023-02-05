@@ -9,6 +9,7 @@ import {
 import { Home } from "./src/screens/Home";
 import theme from "./src/theme";
 import { Loading } from "./src/components/Loading";
+import { Meal } from "./src/screens/Meal";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Nunito_400Regular, Nunito_700Bold });
@@ -16,7 +17,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar style="dark" backgroundColor="transparent" translucent />
-      {fontsLoaded ? <Home /> : <Loading />}
+      {fontsLoaded ? <Meal /> : <Loading />}
     </ThemeProvider>
   );
 }
