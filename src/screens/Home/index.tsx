@@ -1,4 +1,6 @@
 import { ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 import {
   Container,
   Ellipse,
@@ -17,9 +19,12 @@ import { useTheme } from "styled-components/native";
 import { PercentCard } from "../../components/PercentCard";
 import { Button } from "../../components/Button";
 import { Plus } from "phosphor-react-native";
+import { MealsContainer } from "../../components/MealsContainer";
+import { MealsCard } from "../../components/MealsCard";
 
 export function Home() {
   const { COLORS } = useTheme();
+  const navigation = useNavigation();
 
   return (
     <>
@@ -49,7 +54,16 @@ export function Home() {
               />
             </MealsSectionHeader>
 
-            <MealsSectionContent></MealsSectionContent>
+            <MealsSectionContent>
+              <MealsContainer date="05/02/2023">
+                <MealsCard
+                  time="20:25"
+                  title="X-burguer com fritas"
+                  type="SECONDARY"
+                  onPress={() => navigation.navigate("meal")}
+                />
+              </MealsContainer>
+            </MealsSectionContent>
           </MealsSection>
         </Container>
       </ScrollView>
