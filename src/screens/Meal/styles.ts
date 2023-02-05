@@ -87,7 +87,7 @@ export const ModalText = styled.Text`
   ${({ theme }) => css`
     font-family: ${theme.FONT_FAMILY.BOLD};
     font-size: ${theme.FONT_SIZE.XL}px;
-    color: ${theme.COLORS.GRAY_600};
+    color: ${theme.COLORS.GRAY_200};
   `}
   text-align: center;
   margin-bottom: 32px;
