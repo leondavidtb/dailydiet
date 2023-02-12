@@ -41,7 +41,11 @@ export function Home() {
             <Ellipse source={ellipseImg} />
           </Header>
           <PercentSection>
-            <PercentCard loading={false} percent={30} />
+            <PercentCard
+              loading={false}
+              percent={30}
+              onPress={() => navigation.navigate("statistics")}
+            />
           </PercentSection>
 
           <MealsSection>

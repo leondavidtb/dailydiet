@@ -34,7 +34,7 @@ export const MealDescription = styled.Text`
   ${({ theme }) => css`
     font-family: ${theme.FONT_FAMILY.REGULAR};
     font-size: ${theme.FONT_SIZE.LG}px;
-    color: ${theme.COLORS.GRAY_200};
+    color: ${theme.COLORS.GRAY_600};
   `}
 
   margin-bottom: 24px;
@@ -54,7 +54,7 @@ export const MealDateAndHour = styled.Text`
   ${({ theme }) => css`
     font-family: ${theme.FONT_FAMILY.REGULAR};
     font-size: ${theme.FONT_SIZE.LG}px;
-    color: ${theme.COLORS.GRAY_200};
+    color: ${theme.COLORS.GRAY_600};
   `}
 
   margin-bottom: 24px;
