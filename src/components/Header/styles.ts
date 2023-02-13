@@ -34,7 +34,7 @@ export const Title = styled.Text`
 `;
 
 export const Icon = styled(ArrowLeft).attrs(({ theme }) => ({
-  color: theme.COLORS.GRAY_200,
+  color: theme.COLORS.GRAY_600,
   size: 24,
 }))``;
 

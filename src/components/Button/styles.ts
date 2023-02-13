@@ -26,7 +26,7 @@ export const Container = styled(TouchableOpacity)<Props>`
       : theme.COLORS.GRAY_100};
   border: ${({ theme, type }) =>
     type === "TERTIARY" || type === "QUATERNARY"
-      ? `1px solid ${theme.COLORS.GRAY_100}`
+      ? `1px solid ${theme.COLORS.GRAY_700}`
       : "none"};
   border-radius: 6px;
 `;
