@@ -101,6 +101,9 @@ export function Home() {
                 title="Nova refeição"
                 type="PRIMARY"
                 icon={<Plus size={18} color={COLORS.WHITE} />}
+                onPress={() =>
+                  navigation.navigate("addOrEditMeal", { type: "add" })
+                }
               />
             </MealsSectionHeader>
 
@@ -135,14 +138,6 @@ export function Home() {
                     return dateB.getTime() - dateA.getTime();
                   })
               )}
-              <MealsContainer date="05/02/2023">
-                <MealsCard
-                  time="20:25"
-                  title="X-burguer com fritas"
-                  type="SECONDARY"
-                  onPress={() => navigation.navigate("meal")}
-                />
-              </MealsContainer>
             </MealsSectionContent>
           </MealsSection>
         </Container>

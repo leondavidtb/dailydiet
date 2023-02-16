@@ -20,20 +20,47 @@ import {
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Tag } from "../../components/Tag";
+import { MealProps } from "../../storage/mealType";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { removeMeal } from "../../storage/removeMeal";
+
+type Meal = {
+  meal: MealProps;
+};
 
 export function Meal() {
   const [modalVisible, setModalVisible] = useState(false);
   const { COLORS } = useTheme();
 
+  const navigation = useNavigation();
+  const route = useRoute();
+
+  const { meal } = route.params as Meal;
+
+  async function handleRemoveMeal() {
+    try {
+      await removeMeal(meal.id);
+      navigation.navigate("home");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <Container>
-      <Header title="Refeição" color="RED_LIGHT" />
+      <Header
+        title="Refeição"
+        navigate="home"
+        color={meal.withinDiet ? "GREEN_LIGHT" : "RED_LIGHT"}
+      />
       <Content>
-        <MealTitle>X-tudo com fritas</MealTitle>
-        <MealDescription>Jantar</MealDescription>
+        <MealTitle>{meal.name}</MealTitle>
+        <MealDescription>{meal.description}</MealDescription>
         <MealDateAndHourTitle>Data e hora</MealDateAndHourTitle>
-        <MealDateAndHour>04/02/2023 às 20:51</MealDateAndHour>
-        <Tag type="SECONDARY" />
+        <MealDateAndHour>
+          {meal.date} às {meal.time}
+        </MealDateAndHour>
+        {meal.withinDiet ? <Tag type="PRIMARY" /> : <Tag type="SECONDARY" />}
       </Content>
       <Footer>
         <Button
@@ -43,6 +70,9 @@ export function Meal() {
           }}
           type="PRIMARY"
           icon={<PencilLine size={18} color={COLORS.WHITE} />}
+          onPress={() =>
+            navigation.navigate("addOrEditMeal", { meal, type: "edit" })
+          }
         />
         <Button
           title="Excluir refeição"
@@ -73,7 +103,11 @@ export function Meal() {
                 style={{ marginRight: 12 }}
                 onPress={() => setModalVisible(false)}
               />
-              <Button title="Sim, excluir" type="SECONDARY" />
+              <Button
+                title="Sim, excluir"
+                type="SECONDARY"
+                onPress={handleRemoveMeal}
+              />
             </ModalButtons>
           </ModalContent>
         </ModalContainer>

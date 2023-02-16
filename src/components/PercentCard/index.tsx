@@ -11,10 +11,10 @@ export function PercentCard({ loading, percent = 0, ...rest }: Props) {
   return (
     <Container
       activeOpacity={0.8}
-      percentType={percent >= 50 ? "POSITIVE" : "NEGATIVE"}
+      percentType={percent > 50 ? "POSITIVE" : "NEGATIVE"}
       {...rest}
     >
-      <Icon percentType={percent >= 50 ? "POSITIVE" : "NEGATIVE"} />
+      <Icon percentType={percent > 50 ? "POSITIVE" : "NEGATIVE"} />
       <Title>
         {loading ? (
           <Loading />

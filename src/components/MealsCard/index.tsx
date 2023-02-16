@@ -21,7 +21,7 @@ export const MealsCard = ({
       <Time>{time}</Time>
       <Divider />
       <Title>
-        {title.length > 30 ? title.substring(0, 22) + "..." : title}
+        {title.length > 30 ? title.substring(0, 20) + "..." : title}
       </Title>
       <Status color={type === "PRIMARY" ? COLORS.GREEN_MID : COLORS.RED_MID} />
     </Container>
