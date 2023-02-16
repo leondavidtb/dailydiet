@@ -73,7 +73,7 @@ export const ModalContainer = styled.View`
 
 export const ModalContent = styled.View`
   justify-content: center;
-  background-color: ${({ theme }) => theme.COLORS.GRAY_700};
+  background-color: ${({ theme }) => theme.COLORS.GRAY_100};
 
   width: 327px;
   height: 192px;
@@ -87,7 +87,7 @@ export const ModalText = styled.Text`
   ${({ theme }) => css`
     font-family: ${theme.FONT_FAMILY.BOLD};
     font-size: ${theme.FONT_SIZE.XL}px;
-    color: ${theme.COLORS.GRAY_200};
+    color: ${theme.COLORS.GRAY_600};
   `}
   text-align: center;
   margin-bottom: 32px;
